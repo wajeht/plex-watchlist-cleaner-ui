@@ -13,6 +13,9 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 ./env/*
 env/*
 
+./env
+env
+
 # Runtime data
 pids
 *.pid
@@ -294,3 +297,4 @@ cython_debug/
 
 env/
 ./env/
+/env

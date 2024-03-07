@@ -12,7 +12,8 @@ RUN apt-get update && \
     apt-get install -y curl python3-venv python3-dev && \
     python3 -m venv /venv && \
     /venv/bin/pip install --upgrade pip && \
-    /venv/bin/pip install --no-cache-dir -r requirements.txt
+    /venv/bin/pip install --no-cache-dir -r requirements.txt && \
+    /venv/bin/pip install plexapi
 
 COPY . .
 
