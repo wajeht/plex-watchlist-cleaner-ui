@@ -1,14 +1,15 @@
 {
   "name": "plex-watchlist-cleaner-ui",
-  "version": "1.0.0",
-  "description": "",
+  "version": "0.0.1",
+  "description": "UI to clean all the stuff inside plex watchlist",
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "start": "NODE_ENV=production && node ./src/index.js",
-		"dev": "nodemon ./src/index.js"
+    "start": "NODE_ENV=production && npm run plex && node ./src/index.js",
+		"dev": "nodemon ./src/index.js",
+    "plex": "pip install --break-system-packages -r requirements.txt"
   },
-  "keywords": [],
+  "keywords": ["plex", "watchlist"],
   "author": "wajeht",
   "license": "MIT",
   "dependencies": {
