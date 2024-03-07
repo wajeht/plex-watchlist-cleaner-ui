@@ -58,7 +58,7 @@ app.post('/clean', async (req, res, next) => {
 
 	const indexDotPy = path.resolve(path.join(process.cwd(), 'src', 'index.py'));
 	try {
-		const result = await shell(`python ${indexDotPy} "${username}" "${password}"`);
+		const result = await shell(`python3 ${indexDotPy} ${username} ${password}`);
 		return res.status(200).json({ result: result.trim() });
 	} catch (error) {
 		if (error.message.includes('Authentication failed')) {
