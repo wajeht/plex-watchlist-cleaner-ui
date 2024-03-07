@@ -2,11 +2,11 @@ FROM node:20
 
 WORKDIR /usr/src/app
 
-COPY package*.json ./
+COPY ./package*.json ./
 
 RUN npm install
 
-COPY requirements.txt ./
+COPY ./requirements.txt ./
 
 RUN apt-get update && \
     apt-get install -y curl python3-venv python3-dev && \
