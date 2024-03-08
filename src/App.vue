@@ -61,8 +61,8 @@ async function cleanWatchList() {
   <button @click="cleanWatchList">Clean</button>
 
   <p v-if="states.loading">loading...</p>
-  <pre v-if="states.result">{{ states.result }}</pre>
-  <pre v-if="states.error">{{ states.error }}</pre>
+  <pre v-if="!states.loading && states.result">{{ states.result }}</pre>
+  <pre v-if="!states.loading && states.error">{{ states.error }}</pre>
 </template>
 
 <style scoped>
