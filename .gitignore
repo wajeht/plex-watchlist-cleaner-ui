@@ -330,4 +330,4 @@ coverage
 
 *.tsbuildinfo
 public/*
-# !public/.gitkeep
+!public/.gitkeep
