@@ -17,7 +17,7 @@ RUN apt-get update && \
 
 COPY ./ .
 
-RUN npm run build
+RUN npm run build:ui
 
 EXPOSE 8080
 
