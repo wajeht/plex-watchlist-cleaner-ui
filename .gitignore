@@ -329,3 +329,5 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+./public/*
+!./public/.gitkeep

@@ -50,7 +50,17 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.resolve(path.join(process.cwd(), 'public')), { maxAge: '24h' }));
 
-app.post('/clean', async (req, res, next) => {
+app.get('*', async (req, res, next) => {
+	try {
+		const vue = path.resolve(path.join(process.cwd(), 'public', 'index.html'));
+		res.setHeader('Content-Type', 'text/html');
+		return res.status(200).sendFile(vue);
+	} catch (error) {
+		next(error);
+	}
+});
+
+app.post('/api/clean', async (req, res, next) => {
 	const { username, password } = req.body;
 	if (!username || !password) {
 		return res.status(400).json({ error: 'Missing username or password' });
@@ -70,7 +80,7 @@ app.post('/clean', async (req, res, next) => {
 	}
 });
 
-app.get('/healthz', (req, res) => res.json({ message: 'ok' }));
+app.get('/api/healthz', (req, res) => res.json({ message: 'ok' }));
 
 app.use((req, res, _next) => res.status(404).json({ message: 'not found' }));
 
