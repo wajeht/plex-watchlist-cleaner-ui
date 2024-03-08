@@ -47,6 +47,10 @@ async function cleanWatchList() {
 </script>
 
 <template>
+  <h1 class="text-3xl font-bold underline">
+    Hello world!
+  </h1>
+
   <div>
     <label for="username">username</label>
     <input type="text" name="username" id="username" v-model="states.username">

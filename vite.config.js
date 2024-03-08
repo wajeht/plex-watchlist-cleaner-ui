@@ -22,7 +22,6 @@ export default defineConfig({
 	plugins: [vue()],
 	build: {
 		outDir: './public',
-		publicDir: './public',
 		reportCompressedSize: true,
 		chunkSizeWarningLimit: 1600,
 		emptyOutDir: false,
