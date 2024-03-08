@@ -6,11 +6,13 @@
   "type": "module",
   "scripts": {
     "dev": "concurrently --kill-others --names \"EXPRESS,VUE\" -c \"bgGreen.black,bgRed.black\" \"HMR='true' nodemon ./src/server.js\" \"vite\"",
-    "start": "NODE_ENV=production && npm run plex && node ./src/index.js",
+    "start": "NODE_ENV=production && npm run plex && node ./src/server.js",
     "dev:api": "nodemon ./src/index.js",
     "dev:ui": "vite",
     "build:ui": "vite build",
+    "build:api": "echo 'api' does not need to build!",
     "preview:ui": "vite preview",
+    "preview:": "NODE_ENV=production && npm run plex && node ./src/server.js",
     "plex": "pip install --break-system-packages -r requirements.txt"
   },
   "keywords": [

@@ -21,4 +21,4 @@ EXPOSE 8080
 
 HEALTHCHECK CMD curl -f http://localhost:8080/healthz || exit 1
 
-CMD ["npm", "run", "start"]
+CMD ["npm", "run", "dev"]

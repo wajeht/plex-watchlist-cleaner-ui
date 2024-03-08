@@ -31,10 +31,10 @@ export default defineConfig({
 	server: {
 		hmr: true,
 		host: '0.0.0.0',
-		port: 3000,
+		port: process.env.VUE_PORT,
 		proxy: {
 			'/api': {
-				target: `http://localhost:8080`,
+				target: `http://localhost:${process.env.NODE_PORT}`,
 				changeOrigin: true,
 				rewrite: (path) => path.replace(/^\/api/, '/api'),
 			},

@@ -40,7 +40,7 @@ async function shell(command) {
 
 dotenv.config(path.resolve(path.join(process.cwd(), '.env')));
 
-const PORT = process.env.PORT || 8080;
+const PORT = process.env.NODE_PORT || 8080;
 const app = express();
 
 app.use(helmet());
