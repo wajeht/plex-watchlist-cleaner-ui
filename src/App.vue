@@ -71,11 +71,18 @@ async function cleanWatchList() {
               <span class="label-text">Password</span>
             </div>
           </label>
-          <input type="text" v-model="states.password" placeholder="********" class="input input-bordered w-full "
-            :disabled="states.loading" />
+          <div class="relative">
+            <input :type="computedPasswordOrTextType" v-model="states.password" placeholder="••••••••"
+              class="input input-bordered w-full " :disabled="states.loading" />
+            <button @click="showPassword" v-if="states.showPassword && states.password.length"
+              class="absolute h-full right-0 mr-2 p-2">🙈</button>
+            <button @click="showPassword" v-if="!states.showPassword && states.password.length"
+              class="absolute h-full right-0 mr-2 p-2">👀</button>
+          </div>
+
         </div>
 
-        <button class="btn btn-primary mt-2" @click="cleanWatchList" :disabled="states.loading">
+        <button class="btn btn-neutral mt-2" @click="cleanWatchList" :disabled="states.loading">
           <span v-if="states.loading" class="loading loading-spinner"></span>
           <span v-else>Clean</span>
         </button>
