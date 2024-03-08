@@ -58,11 +58,6 @@ app.post('/api/clean', async (req, res, next) => {
 		const result = await shell(`python3 ${indexDotPy} ${username} ${password}`);
 		return res.status(200).json({ message: result.trim() });
 	} catch (error) {
-		if (error.message.includes('Authentication failed')) {
-			return res
-				.status(401)
-				.json({ message: 'Authentication failed. Please check your credentials.' });
-		}
 		next(error);
 	}
 });
