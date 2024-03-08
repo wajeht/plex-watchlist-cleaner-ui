@@ -331,3 +331,4 @@ coverage
 *.tsbuildinfo
 public/*
 !public/.gitkeep
+!public/favicon.ico
