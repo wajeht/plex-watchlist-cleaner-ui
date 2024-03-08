@@ -40,7 +40,22 @@ app.use(
 	}),
 );
 
-app.use(helmet());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        ...helmet.contentSecurityPolicy.getDefaultDirectives(),
+        'default-src': ["'self'", 'plausible.jaw.dev '],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'localhost',
+          'plausible.jaw.dev',
+        ],
+      },
+    },
+  }),
+);
 app.use(cors());
 app.use(compression());
 app.use(express.json());
