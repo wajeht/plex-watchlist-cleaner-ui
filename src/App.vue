@@ -3,14 +3,14 @@ import { ref } from 'vue';
 
 const count = ref(0);
 
+console.log(count);
+
 </script>
 
 <template>
-
-  <h1>{{ count  }}</h1>
+  <h1>{{ count }}</h1>
   <button @click="count++">✅</button>
   <button @click="count--">❌</button>
-
 </template>
 
 <style scoped>
