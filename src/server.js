@@ -21,7 +21,7 @@ app.use(
 		skip: async function (req, _res) {
 			const myIp = (req.headers['x-forwarded-for'] || req.socket.remoteAddress).split(', ')[0];
 			const myIpWasConnected = myIp === process.env.MY_IP;
-			if (myIpWasConnected) console.log(`my ip was connected: ${myIp}`);
+			// if (myIpWasConnected) console.log(`my ip was connected: ${myIp}`);
 			return myIpWasConnected;
 		},
 		message: (req, res) => {
