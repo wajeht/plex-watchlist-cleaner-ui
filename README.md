@@ -2,7 +2,7 @@
 
 UI to clean all the stuff inside plex watchlist
 
-# 💻 Development
+# 💻 development
 
 Clone the repository
 
@@ -24,6 +24,6 @@ $ make up
 
 check `Makefile` for more commands
 
-# 📜 License
+# 📜 icense
 
 Distributed under the MIT License © wajeht. See [LICENSE](./LICENSE) for more information.
