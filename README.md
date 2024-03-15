@@ -24,6 +24,6 @@ $ make up
 
 check `Makefile` for more commands
 
-# 📜 icense
+# 📜 license
 
 Distributed under the MIT License © wajeht. See [LICENSE](./LICENSE) for more information.
